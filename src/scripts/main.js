@@ -369,7 +369,7 @@ people.forEach((person) => {
 
   const sexCell = document.createElement('td');
 
-  sexCell.textContent = person.sex;
+  sexCell.textContent = person.sex === 'm' ? 'Male' : 'Female';
 
   const bornCell = document.createElement('td');
 
@@ -387,12 +387,7 @@ people.forEach((person) => {
 
   centuryCell.textContent = Math.ceil(person.died / 100);
 
-  row.append(nameCell);
-  row.append(sexCell);
-  row.append(bornCell);
-  row.append(diedCell);
-  row.append(ageCell);
-  row.append(centuryCell);
+  row.append(nameCell, sexCell, bornCell, diedCell, ageCell, centuryCell);
 
   dashboard.append(row);
 });
